@@ -34,7 +34,7 @@ def main():
         )
 
     # Calcular o lucro usando a função de cálculo
-    lucro_mes, receita_mes, clientes_ativos_mes = calcular_lucro(
+    lucro_mes, receita_mes = calcular_lucro(
         meses, 
         clientes_iniciais, 
         cac, 
@@ -50,7 +50,6 @@ def main():
         'Mês': list(range(1, meses + 1)),
         'Lucro Acumulado': lucro_mes,
         'Receita Mensal': receita_mes,
-        'Clientes Ativos': clientes_ativos_mes
     })
 
     # Criar o gráfico interativo
