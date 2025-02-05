@@ -28,9 +28,8 @@ def calcular_lucro(
     clientes_atuais = clientes_iniciais
     lucro_mes = []
     receita_mes = []
-    clientes_ativos_mes = []
 
-    # Cálculo do lucro, receita e clientes ativos mês a mês
+    # Cálculo do lucro e receita mês a mês
     for mes in range(1, meses + 1):
         prob = prob_recompra[mes - 1]  # Probabilidade de recompra para o mês corrente
         novos_clientes = clientes_atuais * prob  # Número de clientes que realizaram recompra
@@ -42,9 +41,8 @@ def calcular_lucro(
         lucro_acumulado += lucro_mes_atual
         lucro_mes.append(lucro_acumulado)
         receita_mes.append(receita_mes_atual)
-        clientes_ativos_mes.append(clientes_atuais)
         
         # Atualiza o número de clientes atuais para o próximo mês
         clientes_atuais += novos_clientes  
     
-    return lucro_mes, receita_mes, clientes_ativos_mes
+    return lucro_mes, receita_mes
